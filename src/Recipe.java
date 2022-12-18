@@ -7,10 +7,12 @@ public class Recipe {
     private double totalCost;
     private ProductList productList;
 
+
+
     public Recipe(String name, double totalCost, ProductList productList) {
-        setName(name);
-        setTotalCost(totalCost);
-        setProductList(productList);
+        this.name = name;
+        this.totalCost = totalCost;
+        this.productList = productList;
     }
 
     public String getName() {
@@ -48,5 +50,13 @@ public class Recipe {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    @Override
+    public String toString() {
+        return "Рецепт - " + name + '\'' +
+                ", полная стоимость - " + totalCost +
+                ", список продуктов - " + productList +
+                '}';
     }
 }

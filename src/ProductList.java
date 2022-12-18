@@ -15,6 +15,7 @@ public class ProductList {
             throw new IllegalArgumentException("Такой продукт уже есть в списке!");
         }
         products.add(product);
+        System.out.println("Вы добавили: "+product);
     }
     public void deleteProduct(Product product) {
         products.remove(product);

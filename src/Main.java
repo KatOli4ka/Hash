@@ -3,20 +3,41 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         System.out.println("ДЗ-1.");
-//        Product product = new Product("Мука", 78.98, 2);
-//        Product product1 = new Product("Греча", 65.96, 1);
-//        Product product2 = new Product("Хлеб", 35.0, 2);
-//        Product product3 = new Product("Молоко", 71.99, 2);
-//        Product product4 = new Product("Мясо", 399.00, 2);
-//
-//        Set<Product>products=new HashSet<>();
-//        products.add(new Product("Каша",29.90,4));
-//        products.add(new Product("Каша",29.90,4));
-//        products.add(product1);
-//        products.add(product2);
-//        products.add(product3);
-//        products.add(product4);
-//        System.out.println(Arrays.toString(products.toArray()));
+        Product flour = new Product("Мука", 78.98, 2);
+        Product buckwheat = new Product("Греча", 65.96, 1);
+        Product bread = new Product("Хлеб", 35.0, 2);
+        Product milk = new Product("Молоко", 71.99, 2);
+        Product meat = new Product("Мясо", 399.00, 2);
+        Set<Product>products=new HashSet<>();
+        products.add(flour);
+        products.add(bread);
+        products.add(buckwheat);
+        products.add(meat);
+        products.add(milk);
+        System.out.println(products);
+
+        ProductList productList=new ProductList(products);
+        productList.addProduct(new Product("каша",56.0,3));
+        productList.addProduct(new Product("банан",76.0,3));
+        System.out.println(productList);
+    
+        Recipe one=new Recipe("Новый рецепт",78.0,productList);
+        Recipe two=new Recipe("Новый рецепт2",23.0,productList);
+        Recipe three=new Recipe("Новый рецепт3",65.0,productList);
+        Set<Recipe>recipes=new HashSet<>();
+        recipes.add(one);
+        recipes.add(two);
+        recipes.add(three);
+        System.out.println(recipes.toString());
+
+
+
+//        System.out.println(productList);
+//        productList.addProduct(new Product("каша",78.0,3));
+
+
+
+
 
         Random random=new Random();
         Set<Integer>numbers=new HashSet<>();
