@@ -20,7 +20,7 @@ public class Main {
         productList.addProduct(new Product("каша",56.0,3));
         productList.addProduct(new Product("банан",76.0,3));
         System.out.println(productList);
-    
+
         Recipe one=new Recipe("Новый рецепт",78.0,productList);
         Recipe two=new Recipe("Новый рецепт2",23.0,productList);
         Recipe three=new Recipe("Новый рецепт3",65.0,productList);
@@ -31,14 +31,7 @@ public class Main {
         System.out.println(recipes.toString());
 
 
-
-//        System.out.println(productList);
-//        productList.addProduct(new Product("каша",78.0,3));
-
-
-
-
-
+        System.out.println("ДЗ-2.2");
         Random random=new Random();
         Set<Integer>numbers=new HashSet<>();
         while (numbers.size() < 20) {
