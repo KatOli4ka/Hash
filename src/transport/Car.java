@@ -1,6 +1,8 @@
 package transport;
 
 
+import java.util.Objects;
+
 public class Car extends Transport implements Competing{
     private TypeOfBody typeOfBody;
 
@@ -46,6 +48,12 @@ public class Car extends Transport implements Competing{
     public boolean equals(Object o) {
         return super.equals(o);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(typeOfBody);
+    }
+
     @Override
     public String toString() {
         return super.toString();

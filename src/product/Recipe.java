@@ -1,6 +1,6 @@
-import java.util.HashSet;
+package product;
+
 import java.util.Objects;
-import java.util.Set;
 
 public class Recipe {
     private String name;

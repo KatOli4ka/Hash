@@ -1,5 +1,7 @@
 package transport;
 
+import java.util.Objects;
+
 public class Truck extends Transport {
     private LoadCapacity loadCapacity;
     public Truck(String model, String brand, double engineVolume,LoadCapacity loadCapacity) {
@@ -45,6 +47,11 @@ public class Truck extends Transport {
     @Override
     public boolean equals(Object o) {
         return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(loadCapacity);
     }
 
     @Override

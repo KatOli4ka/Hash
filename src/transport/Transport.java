@@ -1,19 +1,17 @@
 package transport;
 
+import com.sun.source.doctree.SeeTree;
 import transport.driver.Driver;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public abstract class Transport implements Competing{
     private String brand;
     private String model;
     private double engineVolume;
-    private final List<Driver<?>> drivers=new ArrayList<>();
-    private final List<Mechanic<?>> mechanics=new ArrayList<>();
-    private final List<Sponsor> sponsors=new ArrayList<Sponsor>();
+    private final Set<Driver<?>> drivers=new HashSet<>();
+    private final Set<Mechanic<?>> mechanics=new HashSet<>();
+    private final Set<Sponsor> sponsors=new HashSet<>();
 
 
     public Transport(String model, String brand,
@@ -85,16 +83,21 @@ public abstract class Transport implements Competing{
         this.sponsors.addAll(Arrays.asList(sponsors));
     }
 
-    public List<Driver<?>> getDrivers() {
+    public Set<Driver<?>> getDrivers() {
         return drivers;
     }
 
-    public List<Mechanic<?>> getMechanics() {
+    public Set<Mechanic<?>> getMechanics() {
         return mechanics;
     }
 
-    public List<Sponsor> getSponsors() {
+    public Set<Sponsor> getSponsors() {
         return sponsors;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, engineVolume, drivers, mechanics, sponsors);
     }
 }
 

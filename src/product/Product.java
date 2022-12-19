@@ -1,6 +1,5 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+package product;
+
 import java.util.Objects;
 
 

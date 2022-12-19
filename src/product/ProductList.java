@@ -1,6 +1,7 @@
-import com.sun.source.doctree.SeeTree;
+package product;
 
-import java.util.HashSet;
+import product.Product;
+
 import java.util.Set;
 
 public class ProductList {
