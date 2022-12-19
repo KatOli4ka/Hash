@@ -38,13 +38,7 @@ public class Main {
             numbers.add(random.nextInt(1000));
         }
         System.out.println(numbers);
-        Iterator<Integer> iterator=numbers.iterator();
-        while (iterator.hasNext()) {
-            Integer number=iterator.next();
-            if (number % 2 == 1) {
-                iterator.remove();
-            }
-        }
+        numbers.removeIf(number -> number % 2 == 1);
         System.out.println(numbers);
 
 
