@@ -1,4 +1,6 @@
 import multiply.MultiplicationTable;
+import pasport.Pasport;
+import pasport.PasportList;
 import product.Product;
 import product.ProductList;
 import product.Recipe;
@@ -7,6 +9,7 @@ import transport.driver.DriverB;
 import transport.driver.DriverC;
 import transport.driver.DriverD;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class Main {
@@ -96,13 +99,20 @@ public class Main {
         Set<MultiplicationTable> multiplicationTables = new HashSet<>();
         while (multiplicationTables.size() < 15) {
            MultiplicationTable multiplicationTable = new
-                   MultiplicationTable(random.nextInt(9), random.nextInt(9));
+                   MultiplicationTable(random.nextInt(8)+2, random.nextInt(8)+2);
             multiplicationTables.add(multiplicationTable);
             System.out.println(multiplicationTable);
         }
 
-
-
+        System.out.println("ДЗ-3.3");
+        Set<Pasport>pasports=new HashSet<>();
+                pasports.add(new Pasport("Иван","Иванов","Иванович",
+                LocalDate.now().minusYears(30),"123456"));
+        PasportList pasportList = new PasportList(pasports);
+        System.out.println(pasportList);
+        pasportList.addPasport(new Pasport("Павел","Петров","Иванович",
+                LocalDate.now().minusYears(25),"123456"));
+        System.out.println(pasportList);
 
     }
     public static void printInfo(Transport transport) {
